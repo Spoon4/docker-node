@@ -1,0 +1,8 @@
+version: '2'
+services:
+    pandoc:
+        image: silviof/docker-pandoc
+        container_name: dockernode-pandoc
+        volumes:
+            - ./doc:/source
+        entrypoint: build_doc.sh

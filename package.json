@@ -1,0 +1,33 @@
+{
+  "name": "docker-node",
+  "description": "Docker NodeJs",
+  "version": "1.0.0",
+  "repository": "https://github.com/Spoon4/docker-node",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-concat": "~2.4.2",
+    "gulp-clean": "~0.3.1",
+    "gulp-uglify": "~1.0.1",
+    "gulp-jshint": "~1.9.0",
+    "gulp-merge": "~0.1.0",
+    "gulp-header": "~1.2.2",
+    "gulp-size": "~1.1.0",
+    "minimist": "~1.1.0",
+    "gulp-rename": "~1.2.0",
+    "gulp-file": "~0.2.0",
+    "gulp-replace": "~0.4.0",
+    "jshint-stylish": "~1.0.0"
+  },
+  "scripts": {
+    "start": "http-server `pwd` -p 8000",
+    "postinstall": "bower install",
+    "gulp": "gulp"
+  },
+  "dependencies": {
+    "bower": "^1.7.2",
+    "http-server": "~0.7.3"
+  }
+}
