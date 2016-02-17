@@ -1,21 +1,18 @@
 machine:
-  pre :
-    - echo 'DOCKER_OPTS="-s btrfs -e lxc -D"' | sudo tee -a /etc/default/docker
-    - sudo curl -L -o /usr/bin/docker 'http://s3-external-1.amazonaws.com/circle-downloads/docker-1.10.1-circleci' 
-    - sudo chmod 0755 /usr/bin/docker
-    - sudo sed -i -e 's/ --userland-proxy=false//' /etc/default/docker
-    - sudo sed -i -e 's/exec "$DOCKER" daemon $DOCKER_OPTS/exec "$DOCKER" --daemon $DOCKER_OPTS/' /etc/init/docker.conf
   services:
     - docker
 
 dependencies:
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+    - sudo pip install --upgrade docker-compose==1.6.0
   override:
     - docker info
 
 test:
-  override:
+  pre:
     - docker-compose build data
     - docker-compose build master
+  override:
     - docker-compose up master
 
 #deployment:
