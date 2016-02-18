@@ -4,7 +4,6 @@ machine:
 
 dependencies:
   override:
-    - sudo pip install --upgrade docker==1.10.1
     - sudo pip install --upgrade docker-compose==1.6.0
     - docker info
 
