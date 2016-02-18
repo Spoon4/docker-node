@@ -13,4 +13,5 @@ test:
   override:
     - docker-compose build data
     - docker-compose up -d master
+    - curl -i localhost:8000
 
