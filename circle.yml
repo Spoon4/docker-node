@@ -11,7 +11,7 @@ dependencies:
 
 test:
   pre:
-    - if test -d ./doc; then mkdir doc && echo "# continuous integration test" > doc/test.md; fi 
+    - if ! test -d ./doc; then mkdir doc && echo "# continuous integration test" > doc/test.md; fi 
   override:
     - docker-compose build data
     - docker-compose up -d master
