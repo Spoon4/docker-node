@@ -33,13 +33,16 @@ services:
         extends:
             file: docker/pandoc/pandoc-compose.yml
             service: pandoc
-        container_name: dockernode-pdf
-        command: ["-o", "file.pdf", "-V", "geometry:margin=1in --latex-engine=xelatex"]
-        entrypoint: docker/pandoc/build_doc.sh
-    # Pandoc service for Word file generation
+        container_name: playerapi-pdf
+        volumes:
+            - ./doc:/source
+        command: -o file.pdf -V geometry:margin=1in --latex-engine=xelatex
     pandoc-docx:
         extends:
             file: docker/pandoc/pandoc-compose.yml
             service: pandoc
-        container_name: dockernode-docx
-#        command: pandoc -o file.docx #--reference-docx=template.docx
+        container_name: playerapi-docx
+        volumes:
+            - ./doc:/source
+        command: -o file.docx # --reference-docx=template.docx
+

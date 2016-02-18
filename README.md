@@ -34,7 +34,7 @@ This is done by setting `directory` configuration in [`.bowerrc`][bowerrc].
 
 bower basicaly doesn't allow command execution by root user. Given that Docker commands are executed by root user, this is bypassed by setting the configuration `allow_root` to `true` in [`.bowerrc`][bowerrc] file.
 
-## :construction: dockernode-pandoc
+## dockernode-pandoc
 
 [Pandoc][pandoc] container using [silviof/docker-pandoc][docker-pandoc] Docker image.
 
@@ -44,9 +44,22 @@ Generates documentation from `doc/` folder by creating a temporary HTML file.
 
 Docker compose service to generate a **PDF** from Markdown documentation.
 
+    
+    $ docker-compose run pandoc-pdf
+    
+
+A **player-api.pdf** file will be generated in source directory (default: `doc/`).
+
 ### dockernode-docx
 
 Docker compose service to generate a **Word** file from Markdown documentation.
+
+    
+    $ docker-compose run pandoc-docx
+    
+
+A **player-api.docx** file will be generated in source directory (default: `doc/`).
+
 
 [nodejs]:        https://nodejs.org
 [npm]:           http://www.npmjs.com
