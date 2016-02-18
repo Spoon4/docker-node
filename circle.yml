@@ -3,7 +3,7 @@ machine:
     - docker
 
 dependencies:
-  overdose:
+  override:
     - sudo pip install --upgrade docker==1.10.1
     - sudo pip install --upgrade docker-compose==1.6.0
     - docker info
@@ -14,9 +14,3 @@ test:
   override:
     - docker-compose up master
 
-#deployment:
-#  hub:
-#    branch: master
-#    commands:
-#      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-#      - docker push spoon4/dockernode-data 
