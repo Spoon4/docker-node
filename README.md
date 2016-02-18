@@ -1,4 +1,4 @@
-# docker-node
+# docker-node [![Circle CI](https://circleci.com/gh/Spoon4/docker-node.svg?style=shield&circle-token:235510c83bfbf4f7f9631a83fb6dc2a54e60972e)](https://circleci.com/gh/Spoon4/docker-node)
 
 Docker services with data container embedding [NodeJs][nodejs].
 

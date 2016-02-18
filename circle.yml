@@ -8,11 +8,9 @@ dependencies:
   override:
     - sudo pip install --upgrade docker-compose==1.6.0
     - docker info
-    - docker version
-    - docker-compose version
 
 test:
   override:
     - docker-compose build data
-    - docker-compose up master
+    - docker-compose up -d master
 
