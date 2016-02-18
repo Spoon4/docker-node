@@ -10,8 +10,12 @@ dependencies:
     - docker info
 
 test:
+  pre:
+    - if test -d ./doc; then mkdir doc && echo "# continuous integration test" > doc/test.md; fi 
   override:
     - docker-compose build data
     - docker-compose up -d master
     - curl -i localhost:8000
+    - docker-compose run pandoc-pdf
+    - docker-compose run pandoc-docx
 
